@@ -1,0 +1,23 @@
+
+<div class="page-header">
+  <h2>最近日志 | Recent Posts</h2>
+</div>
+
+<ul class="posts list-unstyled">
+  {% for post in site.posts limit:5 %}
+    <li>
+      <div class="media">
+        <a class="pull-right" href="{{post.url}}">
+          <img class="media-object" src="{{post.thumbnail}}" width="100" alt="">
+        </a>
+        <div class="media-body">
+          <h3 class="media-heading"><a href="{{post.url}}">{{post.title}}</a> <small class="label label-default">{{ post.date | date: "%Y年%-m月%-d日" }}</small></h3>
+          <p>{{post.excerpt}}</p>
+          <br>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="homepage-archive"><a href="/archive.html" class="btn btn-default btn-sm">更多见@<strong>Archive</strong>页面.</a></div>
